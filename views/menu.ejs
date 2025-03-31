@@ -7,7 +7,46 @@
 </head>
 <body>
     <a href="/">Home</a>
-    <a href="/menu">Full Menu</a>  
+    <a href="/menu">Full Menu</a> 
+    <a href="/menu/mains">Mains</a>
+    <a href="/menu/desserts">Desserts</a>
+    <a href="/menu/sides">Sides</a> 
   <h1>Full Menu</h1>
+    
+  <h2>Mains</h2>
+  <% menu.forEach((item, menuItems) => { %>
+    <% if (item.category === 'mains') { %>
+      <a href="/<%= menuItems %>">
+      <p><%= item.name %></p>
+    </a>
+      <p>Price: <%= item.price %></p>
+      <p>Rating: <%= item.rating %></p>
+      <p>Description: <%= item.details %></p>
+    <% } %>
+    <% }) %>
+  
+  <h2>Desserts</h2>
+  <% menu.forEach((item, menuItems) => { %>
+    <% if (item.category === 'desserts') { %>
+      <a href="/<%= menuItems %>">
+      <p><%= item.name %></p>
+      </a>
+      <p>Price: <%= item.price %></p>
+      <p>Rating: <%= item.rating %></p>
+      <p>Description: <%= item.details %></p>
+    <% } %>
+    <% }) %>
+
+    <h2>Sides</h2>
+    <% menu.forEach((item, menuItems) => { %>
+      <% if (item.category === 'sides') { %>
+        <a href="/<%= menuItems %>">
+        <p><%= item.name %></p>
+      </a>
+        <p>Price: <%= item.price %></p>
+        <p>Rating: <%= item.rating %></p>
+        <p>Description: <%= item.details %></p>
+      <% } %>
+      <% }) %>
 </body>
 </html>

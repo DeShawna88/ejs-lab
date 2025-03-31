@@ -58,7 +58,25 @@ app.get('/', (req, res) => {
 });
 
 app.get('/menu', (req,res) => {
-  res.render('menu.ejs')
+  res.render('menu.ejs', {
+    menu: RESTAURANT.menu,
+  });
 })
 
-app.listen(3000);
+app.get('/menu/:category', (req, res) => {
+  const category = req.params.category
+  let filteredArray = []
+  RESTAURANT.menu.forEach ((dish) => {
+    if (dish.category.toLowerCase() === category.toLowerCase()){
+      filteredArray.push(dish)
+    }
+  })
+  console.log(filteredArray)
+  res.render('category.ejs', {
+    menuItems: filteredArray
+  })
+})
+
+app.listen(3000, () => {
+  console.log('Listening on port 3000')
+});

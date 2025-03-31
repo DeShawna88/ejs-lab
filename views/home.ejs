@@ -8,13 +8,16 @@
 <body>
   <a href="/">Home</a>
   <a href="/menu">Full Menu</a>
+  <a href="/menu/mains">Mains</a>
+  <a href="/menu/desserts">Desserts</a>
+  <a href="/menu/sides">Sides</a>
   <h1><%= RESTAURANT.name %></h1>
   <% if (RESTAURANT.isOpen === true) { %>
     <p>Yes we are open!</p>
   <% } else { %>
     <p>Sorry, we are closed.</p>
   <% } %>
-  <p><%= RESTAURANT.address %></p>
-  <p><%= RESTAURANT.phone %></p>
+  <footer><%= RESTAURANT.address %></footer>
+  <footer><%= RESTAURANT.phone %></footer>
 </body>
 </html>
